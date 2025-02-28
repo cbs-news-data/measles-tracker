@@ -39,10 +39,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run script
-        run: Rscript -e 'source("west-nile_script.R")'
-
-      - name: Run script
-        run: Rscript -e 'source("eee_script.R")'
+        run: Rscript -e 'source("measles_script.R")'
 
       - name: Commit results
         run: |
