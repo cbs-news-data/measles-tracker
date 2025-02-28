@@ -80,7 +80,30 @@ dw_edit_chart(
   title = "Reported cases of measles this year",
   intro = paste("So far this year, the U.S. has reported <b>", total_cases, "</b> cases. Click or hover over a state for more details."),
   annotate = paste(
-    "Last updated", formatted_datetime, "<br>Note: CDC updates data every Friday."),
+    "Last updated", formatted_datetime, "<br>Note: CDC updates data every Friday. Cases counts are preliminary."),
+  byline = "Taylor Johnston / CBS News",
+  source_name = "CDC",
+  source_url = "https://www.cdc.gov/measles/data-research/index.html",
+  folderId = "299930"
+)
+
+# Publish the chart
+dw_publish_chart(chart_id = "IF2bI")
+
+
+# BAR CHART
+measles_by_year <- fromJSON("https://www.cdc.gov/wcms/vizdata/measles/MeaslesCasesYear.json") %>% filter(filter == "2000-Present*") %>% select(year, cases)%>% 
+  as.data.frame() %>% 
+  janitor::clean_names()
+
+dw_data_to_chart(measles_by_year, "jUEyd", api_key = dw_api_key)
+
+dw_edit_chart(
+  chart_id = "jUEyd",
+  api_key = dw_api_key,
+  title = "Measles cases by year",
+  annotate = paste(
+    "Last updated", formatted_datetime, "<br>Note: CDC updates data every Friday. Current year case counts are preliminary."),
   byline = "Taylor Johnston / CBS News",
   source_name = "CDC",
   source_url = "https://www.cdc.gov/measles/data-research/index.html",
