@@ -111,4 +111,4 @@ dw_edit_chart(
 )
 
 # Publish the chart
-dw_publish_chart(chart_id = "IF2bI")
+dw_publish_chart(chart_id = "jUEyd")
