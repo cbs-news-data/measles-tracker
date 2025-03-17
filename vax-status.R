@@ -3,6 +3,8 @@ library(dplyr)
 library(rvest)
 library(stringr)
 library(lubridate)
+library(dotenv)
+library(DatawRappr)
 
 # Load the .env file
 tryCatch({
