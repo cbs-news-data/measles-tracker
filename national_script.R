@@ -61,6 +61,7 @@ list(total_cases = total_cases, count_non_na = count_non_na)
 # Get current date and time in UTC
 current_datetime_utc <- Sys.time()
 
+
 # Convert UTC to Eastern Time
 current_datetime_eastern <- with_tz(current_datetime_utc, "America/New_York")
 
@@ -68,7 +69,7 @@ current_datetime_eastern <- with_tz(current_datetime_utc, "America/New_York")
 rounded_datetime <- round_date(current_datetime_eastern, "hour")
 
 # Format the date and time
-formatted_datetime <- format(rounded_datetime, "%B %e, %Y at %l %p EST.")
+formatted_datetime <- format(rounded_datetime, "%B %e, %Y at %l %p EDT.")
 
 # Make the Datawrapper
 datawrapper_auth(api_key = dw_api_key)

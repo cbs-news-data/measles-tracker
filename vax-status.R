@@ -70,7 +70,7 @@ current_datetime_eastern <- with_tz(current_datetime_utc, "America/New_York")
 rounded_datetime <- round_date(current_datetime_eastern, "hour")
 
 # Format the date and time
-formatted_datetime <- format(rounded_datetime, "%B %e, %Y at %l %p EST.")
+formatted_datetime <- format(rounded_datetime, "%B %e, %Y at %l %p EDT.")
 
 dw_data_to_chart(vax_df, "qOFbx", api_key = dw_api_key)
 

@@ -24,6 +24,7 @@ jobs:
             any::lubridate
             any::dotenv
             any::httr
+            any::tigris
 
       - name: Set up environment variables based on DATAWRAPPR secret
         run: echo "DW_API_KEY=${{ secrets.DATAWRAPPR }}" >> $GITHUB_ENV
