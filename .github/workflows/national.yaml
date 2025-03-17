@@ -27,6 +27,7 @@ jobs:
             any::xml2
             any::jsonlite
             any::readr
+            any::rvest
 
       - name: Set up environment variables based on DATAWRAPPR secret
         run: echo "DW_API_KEY=${{ secrets.DATAWRAPPR }}" >> $GITHUB_ENV
@@ -43,6 +44,9 @@ jobs:
         
       - name: Run script
         run: Rscript -e 'source("cases.R")'
+        
+      - name: Run script
+        run: Rscript -e 'source("vax-status.R")'
 
       - name: Commit results
         run: |
