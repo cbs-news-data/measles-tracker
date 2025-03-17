@@ -2,6 +2,7 @@
 library(dplyr)
 library(rvest)
 library(stringr)
+library(lubridate)
 
 # Load the .env file
 tryCatch({
