@@ -77,10 +77,10 @@ dw_data_to_chart(measles_data, "IF2bI", api_key = dw_api_key)
 dw_edit_chart(
   chart_id = "IF2bI",
   api_key = dw_api_key,
-  title = "States with measles in 2025",
+  title = "Measles cases by state",
   intro = paste("So far this year, the U.S. has reported <b>", total_cases, "</b> cases. Click or hover over a state for more details."),
   annotate = paste(
-    "Last updated", formatted_datetime, "<br>Note: CDC updates data every Friday. Cases counts are preliminary."),
+    "Last updated", formatted_datetime, "<br>Note: CDC updates data every Friday. Case counts are preliminary."),
   byline = "Taylor Johnston / CBS News",
   source_name = "CDC",
   source_url = "https://www.cdc.gov/measles/data-research/index.html",
@@ -101,7 +101,7 @@ dw_data_to_chart(measles_by_year, "jUEyd", api_key = dw_api_key)
 dw_edit_chart(
   chart_id = "jUEyd",
   api_key = dw_api_key,
-  title = "Measles cases in the U.S. by year",
+  title = "Measles cases by year",
   annotate = paste(
     "Last updated", formatted_datetime, "<br>Note: CDC updates data every Friday. Current year case counts are preliminary."),
   byline = "Taylor Johnston / CBS News",
