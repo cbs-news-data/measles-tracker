@@ -1,9 +1,6 @@
 # Libraries
 library(dplyr)
 library(rvest)
-library(DatawRappr)
-library(lubridate)
-library(dotenv)
 
 # Load the .env file
 tryCatch({
@@ -13,7 +10,8 @@ tryCatch({
 })
 dw_api_key <- Sys.getenv("DW_API_KEY")
 
-# URL of the webpage
+
+# URL of the webpage (replace with the actual URL)
 url <- "https://www.cdc.gov/measles/data-research/index.html"  # Example, update with the actual URL
 
 # Read the webpage
@@ -25,8 +23,13 @@ total_cases <- page %>%
   html_text() %>%
   as.numeric()
 
-# Print
+# Print the total cases to verify
 print(total_cases)
+
+# Extract vaccination status text (targeting the entire 'td' that contains vaccination info)
+vax_text <- page %>%
+  html_elements("td.us-cases.left-border") %>%
+  html_text()
 
 # Extract the relevant percentages from the text using regular expressions
 unvax <- str_extract(vax_text[3], "Unvaccinated or Unknown: (\\d+)%")
@@ -43,6 +46,7 @@ print(unvax)
 print(one_mmr)
 print(two_mmr)
 
+
 # Calculate the "At least one dose" percentage (sum of One MMR dose and Two MMR doses)
 at_least_one_dose <- one_mmr + two_mmr
 
@@ -52,14 +56,6 @@ vax_df <- data.frame(
   Percentage = c(unvax, at_least_one_dose)
 )
 
-
-# Print the dataframe
-print(vax_df)
-
-# Extract vaccination status text (targeting the entire 'td' that contains vaccination info)
-vax_text <- page %>%
-  html_elements("td.us-cases.left-border") %>%
-  html_text()
 
 current_datetime_utc <- Sys.time()
 
