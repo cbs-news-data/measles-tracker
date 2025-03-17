@@ -40,6 +40,9 @@ jobs:
 
       - name: Run script
         run: Rscript -e 'source("national_script.R")'
+        
+      - name: Run script
+        run: Rscript -e 'source("cases.R")'
 
       - name: Commit results
         run: |
