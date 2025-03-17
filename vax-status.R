@@ -1,6 +1,7 @@
 # Libraries
 library(dplyr)
 library(rvest)
+library(stringr)
 
 # Load the .env file
 tryCatch({
