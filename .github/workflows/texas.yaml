@@ -1,48 +1,48 @@
-name: run-TX-scraper
+# name: run-TX-scraper
 
-on:
-  push:
-    branches:
-      - main
-  schedule:
-    - cron: "0 0,6,12,18 * * 2,5"  # Runs the job 4 times every Tuesday and Friday — at midnight, 6 AM, noon, and 6 PM UTC.
-  workflow_dispatch:
+# on:
+#   push:
+#     branches:
+#       - main
+#   schedule:
+#     - cron: "0 0,6,12,18 * * 2,5"  # Runs the job 4 times every Tuesday and Friday — at midnight, 6 AM, noon, and 6 PM UTC.
+#   workflow_dispatch:
 
-jobs:
-  run-scripts:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Set up R
-        uses: r-lib/actions/setup-r@v2
+# jobs:
+#   run-scripts:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - name: Set up R
+#         uses: r-lib/actions/setup-r@v2
 
-      - name: Install packages
-        uses: r-lib/actions/setup-r-dependencies@v2
-        with:
-          packages: |
-            any::dplyr 
-            any::rvest
-            any::lubridate
-            any::dotenv
-            any::httr
-            any::tigris
+#       - name: Install packages
+#         uses: r-lib/actions/setup-r-dependencies@v2
+#         with:
+#           packages: |
+#             any::dplyr 
+#             any::rvest
+#             any::lubridate
+#             any::dotenv
+#             any::httr
+#             any::tigris
 
-      - name: Set up environment variables based on DATAWRAPPR secret
-        run: echo "DW_API_KEY=${{ secrets.DATAWRAPPR }}" >> $GITHUB_ENV
+#       - name: Set up environment variables based on DATAWRAPPR secret
+#         run: echo "DW_API_KEY=${{ secrets.DATAWRAPPR }}" >> $GITHUB_ENV
 
-      - name: Install DatawRappr package
-        run: |
-          Rscript -e "pak::pkg_install('munichrocker/DatawRappr')"
+#       - name: Install DatawRappr package
+#         run: |
+#           Rscript -e "pak::pkg_install('munichrocker/DatawRappr')"
 
-      - name: Check out repository
-        uses: actions/checkout@v4
+#       - name: Check out repository
+#         uses: actions/checkout@v4
 
-      - name: Run script
-        run: Rscript -e 'source("texas_script.R")'
+#       - name: Run script
+#         run: Rscript -e 'source("texas_script.R")'
 
-      - name: Commit results
-        run: |
-          git config --local user.email "actions@github.com"
-          git config --local user.name "GitHub Actions"
-          git add texas_script.R
-          git commit -m 'ran texas_script.R' || echo "No changes to commit"
-          git push origin || echo "No changes to commit"
+#       - name: Commit results
+#         run: |
+#           git config --local user.email "actions@github.com"
+#           git config --local user.name "GitHub Actions"
+#           git add texas_script.R
+#           git commit -m 'ran texas_script.R' || echo "No changes to commit"
+#           git push origin || echo "No changes to commit"
