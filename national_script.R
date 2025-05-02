@@ -9,6 +9,7 @@ library(xml2)
 library(jsonlite)
 library(readr)
 library(xml2)
+library(rvest)
 
 # Load the .env file
 tryCatch({
