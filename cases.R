@@ -7,6 +7,7 @@ library(lubridate)
 library(dotenv)
 library(jsonlite)
 library(readr)
+library(rvest)
 
 # Load the .env file
 tryCatch({
