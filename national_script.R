@@ -39,15 +39,20 @@ measles_data <- fromJSON("https://www.cdc.gov/wcms/vizdata/measles/MeaslesCasesM
   janitor::clean_names() %>%
   rename(state = geography)  # Rename geography column to state
 
+# URL of the webpage (replace with the actual URL)
+url <- "https://www.cdc.gov/measles/data-research/index.html"  # Example, update with the actual URL
 
-# Combine NYC and New York State if both exist
-measles_data <- measles_data %>%
-  mutate(state = case_when(
-    state %in% c("New York City", "New York") ~ "New York",
-    TRUE ~ state
-  )) %>%
-  group_by(state) %>%
-  summarise(cases_calendar_year = sum(as.numeric(cases_calendar_year), na.rm = TRUE), .groups = "drop")
+# Read the webpage
+page <- read_html(url)
+
+# Extract total cases
+total_cases <- page %>%
+  html_element("td.us-cases.left-border h4") %>%
+  html_text() %>%
+  as.numeric()
+
+# Print the total cases to verify
+print(total_cases)
 
 
 # Merge with state abbreviations (keeping all states)
@@ -55,19 +60,28 @@ measles_data <- state_abbreviations %>%
   right_join(measles_data, by = "state")
 
 # Convert column to numeric and replace 0 with NA, then replace NA with an empty string
-measles_data <- measles_data %>%
-  mutate(cases_calendar_year = as.numeric(cases_calendar_year),
-         cases_calendar_year = na_if(cases_calendar_year, 0),
-         cases_calendar_year = ifelse(is.na(cases_calendar_year), "", cases_calendar_year))
+#measles_data <- measles_data %>%
+ # mutate(cases_calendar_year = as.numeric(cases_calendar_year),
+         #cases_calendar_year = na_if(cases_calendar_year, 0),
+         #cases_calendar_year = ifelse(is.na(cases_calendar_year), "", cases_calendar_year))
+
+# Combine NYC and New York State if both exist
+#measles_data <- measles_data %>%
+  #mutate(state = case_when(
+    #state %in% c("New York City", "New York") ~ "New York",
+    #TRUE ~ state
+  #)) %>%
+  #group_by(state) %>%
+  #summarise(year = sum(as.numeric(cases_calendar_year), na.rm = TRUE), .groups = "drop")
 
 # Get total number of confirmed cases (excluding blanks)
-total_cases <- sum(as.numeric(measles_data$cases_calendar_year), na.rm = TRUE)
-total_cases <- format(total_cases, big.mark = ",")
+#total_cases <- sum(as.numeric(measles_data$cases_calendar_year), na.rm = TRUE)
+#total_cases <- format(total_cases, big.mark = ",")
 
 # Count number of states with reported cases
-count_non_na <- sum(measles_data$cases_calendar_year != "")
+#count_non_na <- sum(measles_data$cases_calendar_year != "")
 
-list(total_cases = total_cases, count_non_na = count_non_na)
+#list(total_cases = total_cases, count_non_na = count_non_na)
 # Get date for Datawrapper
 # Get current date and time in UTC
 current_datetime_utc <- Sys.time()
@@ -92,7 +106,7 @@ dw_edit_chart(
   title = "Measles cases by state",
   intro = paste("So far this year, the U.S. has reported <b>", total_cases, "</b> cases. Click or hover over a state for more details."),
   annotate = paste(
-    "Last updated", formatted_datetime, "<br>Note: CDC updates data every Friday. Case counts are preliminary."),
+    "Last updated", formatted_datetime, "<br>Note: CDC updates data every Friday."),
   byline = "Taylor Johnston / CBS News",
   source_name = "CDC",
   source_url = "https://www.cdc.gov/measles/data-research/index.html",
