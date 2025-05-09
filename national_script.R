@@ -8,7 +8,7 @@ library(dotenv)
 library(xml2)
 library(jsonlite)
 library(readr)
-library(rvest)  # <-- Added rvest here
+library(rvest)
 
 # Load the .env file
 tryCatch({
@@ -53,7 +53,6 @@ total_cases <- page %>%
 
 # Print the total cases to verify
 print(total_cases)
-
 
 # Merge with state abbreviations (keeping all states)
 measles_data <- state_abbreviations %>%
@@ -133,7 +132,7 @@ xml_qualifier <- " "  # One-line note, if needed
 xml_legendLabel <- "Confirmed Cases by State"  # Add this line to define the legend label
 
 # Make sure data is cleaned and correctly formatted
-measles_data_binned <- measles_data_binned %>% rename(value = cases_range)
+measles_data_binned <- measles_data %>% rename(value = cases_range)
 
 # Check the structure of WN_data_clean to verify column names and contents
 print(str(measles_data_binned))
@@ -153,36 +152,36 @@ xml_bins <- length(labels)
 xml_binsMax <- 250  # Still true
 
 # Use the data as-is
-WN_data_clean_binned <- measles_data_binned %>%
+measles_data_clean_binned <- measles_data_binned %>%
   select(label = state, value = cases_range)
 
 # For top 3, use a custom order
 # We'll convert labels into numeric midpoints to rank them
 label_midpoints <- c("0" = 0, "1-9" = 5, "10-49" = 30, "50-99" = 75, "100-249" = 175, "250+" = 300)
 
-WN_data_clean_binned$numeric_value <- label_midpoints[WN_data_clean_binned$value]
+measles_data_clean_binned$numeric_value <- label_midpoints[measles_data_clean_binned$value]
 
-top_3_values_binned <- WN_data_clean_binned %>%
+top_3_values_binned <- measles_data_clean_binned %>%
   arrange(desc(numeric_value)) %>%
   head(3)
 
 # Start XML
-WN_map_binned <- xml_new_root("chart")
-xml_add_child(WN_map_binned, "title", xml_title)
-xml_add_child(WN_map_binned, "subtitle", xml_subtitle)
-xml_add_child(WN_map_binned, "legendLabel", xml_legendLabel)
-xml_add_child(WN_map_binned, "type", xml_type)
-xml_add_child(WN_map_binned, "bins", as.character(xml_bins))
-xml_add_child(WN_map_binned, "binsLabels", xml_binsLabels)
-xml_add_child(WN_map_binned, "binsMax", as.character(xml_binsMax))
+measles_map_binned <- xml_new_root("chart")
+xml_add_child(measles_map_binned, "title", xml_title)
+xml_add_child(measles_map_binned, "subtitle", xml_subtitle)
+xml_add_child(measles_map_binned, "legendLabel", xml_legendLabel)
+xml_add_child(measles_map_binned, "type", xml_type)
+xml_add_child(measles_map_binned, "bins", as.character(xml_bins))
+xml_add_child(measles_map_binned, "binsLabels", xml_binsLabels)
+xml_add_child(measles_map_binned, "binsMax", as.character(xml_binsMax))
 
 # Add data rows
-for (i in 1:nrow(WN_data_clean_binned)) {
-  row_node <- xml_add_child(WN_map_binned, "dataPoint")
+for (i in 1:nrow(measles_data_clean_binned)) {
+  row_node <- xml_add_child(measles_map_binned, "dataPoint")
   
-  label_value <- as.character(WN_data_clean_binned$label[i])
-  value_value <- as.character(WN_data_clean_binned$value[i])
-  num_value <- WN_data_clean_binned$numeric_value[i]
+  label_value <- as.character(measles_data_clean_binned$label[i])
+  value_value <- as.character(measles_data_clean_binned$value[i])
+  num_value <- measles_data_clean_binned$numeric_value[i]
   
   xml_add_child(row_node, "label", label_value)
   xml_add_child(row_node, "value", value_value)
@@ -195,9 +194,9 @@ for (i in 1:nrow(WN_data_clean_binned)) {
 }
 
 # Footer info
-xml_add_child(WN_map_binned, "source", xml_source)
-xml_add_child(WN_map_binned, "date", xml_date)
-xml_add_child(WN_map_binned, "qualifier", xml_qualifier)
+xml_add_child(measles_map_binned, "source", xml_source)
+xml_add_child(measles_map_binned, "date", xml_date)
+xml_add_child(measles_map_binned, "qualifier", xml_qualifier)
 
 # Save XML
-write_xml(WN_map_binned, "output/xml/binned.xml")
+write_xml(measles_map_binned, "output/xml/binned.xml")
