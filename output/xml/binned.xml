@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chart>
   <title>Reported measles cases, 2025</title>
-  <subtitle>So far this year: 935 confirmed cases</subtitle>
+  <subtitle>So far this year: 1046 confirmed cases</subtitle>
   <legendLabel>Confirmed Cases by State</legendLabel>
   <type>map</type>
   <bins>6</bins>
@@ -38,9 +38,9 @@
   <dataPoint>
     <label>California</label>
     <value>10-49</value>
-    <showValue>1</showValue>
-    <showLabel>1</showLabel>
-    <valueToShow>10-49</valueToShow>
+    <showValue>0</showValue>
+    <showLabel>0</showLabel>
+    <valueToShow/>
   </dataPoint>
   <dataPoint>
     <label>Colorado</label>
@@ -114,10 +114,10 @@
   </dataPoint>
   <dataPoint>
     <label>Kansas</label>
-    <value>10-49</value>
+    <value>50-99</value>
     <showValue>1</showValue>
     <showLabel>1</showLabel>
-    <valueToShow>10-49</valueToShow>
+    <valueToShow>50-99</valueToShow>
   </dataPoint>
   <dataPoint>
     <label>Kentucky</label>
@@ -240,7 +240,7 @@
   </dataPoint>
   <dataPoint>
     <label>North Dakota</label>
-    <value>0</value>
+    <value>10-49</value>
     <showValue>0</showValue>
     <showLabel>0</showLabel>
     <valueToShow/>
@@ -248,16 +248,16 @@
   <dataPoint>
     <label>Ohio</label>
     <value>10-49</value>
-    <showValue>1</showValue>
-    <showLabel>1</showLabel>
-    <valueToShow>10-49</valueToShow>
+    <showValue>0</showValue>
+    <showLabel>0</showLabel>
+    <valueToShow/>
   </dataPoint>
   <dataPoint>
     <label>Oklahoma</label>
     <value>10-49</value>
-    <showValue>1</showValue>
-    <showLabel>1</showLabel>
-    <valueToShow>10-49</valueToShow>
+    <showValue>0</showValue>
+    <showLabel>0</showLabel>
+    <valueToShow/>
   </dataPoint>
   <dataPoint>
     <label>Oregon</label>
@@ -269,9 +269,9 @@
   <dataPoint>
     <label>Pennsylvania</label>
     <value>10-49</value>
-    <showValue>1</showValue>
-    <showLabel>1</showLabel>
-    <valueToShow>10-49</valueToShow>
+    <showValue>0</showValue>
+    <showLabel>0</showLabel>
+    <valueToShow/>
   </dataPoint>
   <dataPoint>
     <label>Rhode Island</label>
@@ -372,6 +372,6 @@
     <valueToShow/>
   </dataPoint>
   <source>CDC</source>
-  <date>As of May  9, 2025 at  9 AM EDT.</date>
+  <date>As of May 23, 2025 at  2 PM EDT.</date>
   <qualifier> </qualifier>
 </chart>

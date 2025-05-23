@@ -39,17 +39,25 @@ measles_data <- fromJSON("https://www.cdc.gov/wcms/vizdata/measles/MeaslesCasesM
   janitor::clean_names() %>%
   rename(state = geography)  # Rename geography column to state
 
-# URL of the webpage (replace with the actual URL)
-url <- "https://www.cdc.gov/measles/data-research/index.html"  # Example, update with the actual URL
+# Read JSON data for total cases by year to get 2025 total cases
+total_cases_2025 <- fromJSON("https://www.cdc.gov/wcms/vizdata/measles/MeaslesCasesYear.json") %>% 
+  filter(year == "2025") %>% 
+  filter(filter == "2000-Present*")
 
-# Read the webpage
-page <- read_html(url)
+total_cases <- as.numeric(total_cases_2025$cases)
 
-# Extract total cases
-total_cases <- page %>%
-  html_element("td.us-cases.left-border h4") %>%
-  html_text() %>%
-  as.numeric()
+# # URL of the webpage (replace with the actual URL)
+# url <- "https://www.cdc.gov/measles/data-research/index.html"  # Example, update with the actual URL
+# 
+# # Read the webpage
+# page <- read_html(url)
+# 
+# 
+# # Extract total cases
+# total_cases <- page %>%
+#   html_node(xpath = '//*[@id="Total_Cases"]') %>%
+#   html_text() #%>%
+#   as.numeric()
 
 # Print the total cases to verify
 print(total_cases)
@@ -80,7 +88,7 @@ dw_edit_chart(
   chart_id = "IF2bI",
   api_key = dw_api_key,
   title = "Measles cases by state",
-  intro = paste("So far this year, the U.S. has reported <b>", total_cases, "</b> cases. Click or hover over a state for more details."),
+  intro = paste("So far this year, the U.S. has reported <b>", prettyNum(total_cases, big.mark = ",", scientific = FALSE), "</b> cases. Click or hover over a state for more details."),
   annotate = paste(
     "Last updated", formatted_datetime, "<br>Note: CDC updates data every Friday."),
   byline = "Taylor Johnston / CBS News",
