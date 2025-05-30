@@ -5,7 +5,7 @@ library(stringr)
 library(lubridate)
 library(dotenv)
 library(DatawRappr)
-
+library(jsonlite)
 # Load the .env file
 tryCatch({
   load_dot_env()
