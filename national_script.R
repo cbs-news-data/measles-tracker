@@ -88,7 +88,7 @@ dw_edit_chart(
   chart_id = "IF2bI",
   api_key = dw_api_key,
   title = "Measles cases by state",
-  intro = paste("So far this year, the U.S. has reported <b>", prettyNum(total_cases, big.mark = ",", scientific = FALSE), "</b> cases. Click or hover over a state for more details."),
+  intro = paste("So far this year, the U.S. has reported <b>", prettyNum(total_cases, big.mark = ",", scientific = FALSE), "</b> cases."),
   annotate = paste(
     "Last updated", formatted_datetime, "<br>Note: CDC updates data every Friday."),
   byline = "Taylor Johnston / CBS News",

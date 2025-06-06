@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chart>
   <title>Reported measles cases, 2025</title>
-  <subtitle>So far this year: 1046 confirmed cases</subtitle>
+  <subtitle>So far this year: 1168 confirmed cases</subtitle>
   <legendLabel>Confirmed Cases by State</legendLabel>
   <type>map</type>
   <bins>6</bins>
@@ -38,16 +38,16 @@
   <dataPoint>
     <label>California</label>
     <value>10-49</value>
-    <showValue>0</showValue>
-    <showLabel>0</showLabel>
-    <valueToShow/>
+    <showValue>1</showValue>
+    <showLabel>1</showLabel>
+    <valueToShow>10-49</valueToShow>
   </dataPoint>
   <dataPoint>
     <label>Colorado</label>
-    <value>1-9</value>
-    <showValue>0</showValue>
-    <showLabel>0</showLabel>
-    <valueToShow/>
+    <value>10-49</value>
+    <showValue>1</showValue>
+    <showLabel>1</showLabel>
+    <valueToShow>10-49</valueToShow>
   </dataPoint>
   <dataPoint>
     <label>Connecticut</label>
@@ -93,10 +93,10 @@
   </dataPoint>
   <dataPoint>
     <label>Illinois</label>
-    <value>1-9</value>
-    <showValue>0</showValue>
-    <showLabel>0</showLabel>
-    <valueToShow/>
+    <value>10-49</value>
+    <showValue>1</showValue>
+    <showLabel>1</showLabel>
+    <valueToShow>10-49</valueToShow>
   </dataPoint>
   <dataPoint>
     <label>Indiana</label>
@@ -107,7 +107,7 @@
   </dataPoint>
   <dataPoint>
     <label>Iowa</label>
-    <value>0</value>
+    <value>1-9</value>
     <showValue>0</showValue>
     <showLabel>0</showLabel>
     <valueToShow/>
@@ -156,10 +156,10 @@
   </dataPoint>
   <dataPoint>
     <label>Michigan</label>
-    <value>1-9</value>
-    <showValue>0</showValue>
-    <showLabel>0</showLabel>
-    <valueToShow/>
+    <value>10-49</value>
+    <showValue>1</showValue>
+    <showLabel>1</showLabel>
+    <valueToShow>10-49</valueToShow>
   </dataPoint>
   <dataPoint>
     <label>Minnesota</label>
@@ -184,14 +184,14 @@
   </dataPoint>
   <dataPoint>
     <label>Montana</label>
-    <value>1-9</value>
-    <showValue>0</showValue>
-    <showLabel>0</showLabel>
-    <valueToShow/>
+    <value>10-49</value>
+    <showValue>1</showValue>
+    <showLabel>1</showLabel>
+    <valueToShow>10-49</valueToShow>
   </dataPoint>
   <dataPoint>
     <label>Nebraska</label>
-    <value>0</value>
+    <value>1-9</value>
     <showValue>0</showValue>
     <showLabel>0</showLabel>
     <valueToShow/>
@@ -241,23 +241,23 @@
   <dataPoint>
     <label>North Dakota</label>
     <value>10-49</value>
-    <showValue>0</showValue>
-    <showLabel>0</showLabel>
-    <valueToShow/>
+    <showValue>1</showValue>
+    <showLabel>1</showLabel>
+    <valueToShow>10-49</valueToShow>
   </dataPoint>
   <dataPoint>
     <label>Ohio</label>
     <value>10-49</value>
-    <showValue>0</showValue>
-    <showLabel>0</showLabel>
-    <valueToShow/>
+    <showValue>1</showValue>
+    <showLabel>1</showLabel>
+    <valueToShow>10-49</valueToShow>
   </dataPoint>
   <dataPoint>
     <label>Oklahoma</label>
     <value>10-49</value>
-    <showValue>0</showValue>
-    <showLabel>0</showLabel>
-    <valueToShow/>
+    <showValue>1</showValue>
+    <showLabel>1</showLabel>
+    <valueToShow>10-49</valueToShow>
   </dataPoint>
   <dataPoint>
     <label>Oregon</label>
@@ -269,9 +269,9 @@
   <dataPoint>
     <label>Pennsylvania</label>
     <value>10-49</value>
-    <showValue>0</showValue>
-    <showLabel>0</showLabel>
-    <valueToShow/>
+    <showValue>1</showValue>
+    <showLabel>1</showLabel>
+    <valueToShow>10-49</valueToShow>
   </dataPoint>
   <dataPoint>
     <label>Rhode Island</label>
@@ -289,7 +289,7 @@
   </dataPoint>
   <dataPoint>
     <label>South Dakota</label>
-    <value>0</value>
+    <value>1-9</value>
     <showValue>0</showValue>
     <showLabel>0</showLabel>
     <valueToShow/>
@@ -303,10 +303,10 @@
   </dataPoint>
   <dataPoint>
     <label>Texas</label>
-    <value>250+</value>
-    <showValue>1</showValue>
-    <showLabel>1</showLabel>
-    <valueToShow>250+</valueToShow>
+    <value>700+</value>
+    <showValue>0</showValue>
+    <showLabel>0</showLabel>
+    <valueToShow/>
   </dataPoint>
   <dataPoint>
     <label>Utah</label>
@@ -372,6 +372,6 @@
     <valueToShow/>
   </dataPoint>
   <source>CDC</source>
-  <date>As of May 30, 2025 at 11 AM EDT.</date>
+  <date>As of June  6, 2025 at  2 PM EDT.</date>
   <qualifier> </qualifier>
 </chart>
