@@ -4,6 +4,7 @@
   <subtitle> </subtitle>
   <type>dotMap</type>
   <maxValue>408</maxValue>
+  <minDiameter>3</minDiameter>
   <maxDiameter>15</maxDiameter>
   <mapFocus>TX</mapFocus>
   <showCountyLines>1</showCountyLines>

@@ -26,6 +26,7 @@ tx_current_for_XML <- tx_current %>%
 xml_title <- "Measles cases in Texas counties"
 xml_subtitle <- " "
 xml_maxValue <- max(tx_current$Measure.Values) #max value for dots (if maxValue = 0 then single dot size)
+xml_minDiameter <- 3
 xml_maxDiameter <- 15
 xml_source <- "Texas Department of State Health Services"
 xml_date <- paste0("As of ", today_pretty)
@@ -42,6 +43,7 @@ xml_add_child(chart_xml, "title", xml_title)
 xml_add_child(chart_xml, "subtitle", xml_subtitle)
 xml_add_child(chart_xml, "type", xml_type)
 xml_add_child(chart_xml, "maxValue", xml_maxValue)
+xml_add_child(chart_xml, "minDiameter", xml_minDiameter)
 xml_add_child(chart_xml, "maxDiameter", xml_maxDiameter)
 xml_add_child(chart_xml, "mapFocus", xml_mapFocus)
 xml_add_child(chart_xml, "showCountyLines", xml_showCountyLines)
