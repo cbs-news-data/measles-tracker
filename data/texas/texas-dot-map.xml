@@ -2,15 +2,18 @@
 <chart>
   <title>Measles cases in Texas counties</title>
   <subtitle> </subtitle>
-  <type>map</type>
+  <type>dotMap</type>
   <maxValue>408</maxValue>
+  <maxDiameter>15</maxDiameter>
+  <mapFocus>TX</mapFocus>
+  <showCountyLines>1</showCountyLines>
   <dataPoint>
     <label>Gaines</label>
     <latitude>32.74078771</latitude>
     <longitude>-102.6353751</longitude>
     <value>408</value>
     <showLabel>1</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>Terry</label>
@@ -18,7 +21,7 @@
     <longitude>-102.3354521</longitude>
     <value>60</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>El Paso</label>
@@ -26,7 +29,7 @@
     <longitude>-106.1943929</longitude>
     <value>57</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>Lubbock</label>
@@ -34,7 +37,7 @@
     <longitude>-101.8204789</longitude>
     <value>53</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>Dawson</label>
@@ -42,7 +45,7 @@
     <longitude>-101.9477242</longitude>
     <value>26</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>Yoakum</label>
@@ -50,7 +53,7 @@
     <longitude>-102.8279593</longitude>
     <value>20</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>Lamar</label>
@@ -58,7 +61,7 @@
     <longitude>-95.5655813</longitude>
     <value>20</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>Cochran</label>
@@ -66,7 +69,7 @@
     <longitude>-102.8285179</longitude>
     <value>14</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>Ector</label>
@@ -74,7 +77,7 @@
     <longitude>-102.5429428</longitude>
     <value>11</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>Dallam</label>
@@ -82,7 +85,7 @@
     <longitude>-102.602118</longitude>
     <value>7</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>Hockley</label>
@@ -90,7 +93,7 @@
     <longitude>-102.3431676</longitude>
     <value>6</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>Upshur</label>
@@ -98,7 +101,7 @@
     <longitude>-94.94573069</longitude>
     <value>5</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>Parmer</label>
@@ -106,7 +109,7 @@
     <longitude>-102.7844494</longitude>
     <value>5</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>Midland</label>
@@ -114,7 +117,7 @@
     <longitude>-102.0315682</longitude>
     <value>5</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>Hale</label>
@@ -122,7 +125,7 @@
     <longitude>-101.8268114</longitude>
     <value>5</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>Martin</label>
@@ -130,7 +133,7 @@
     <longitude>-101.9513518</longitude>
     <value>3</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>Andrews</label>
@@ -138,7 +141,7 @@
     <longitude>-102.6376348</longitude>
     <value>3</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>Lynn</label>
@@ -146,7 +149,7 @@
     <longitude>-101.8162849</longitude>
     <value>2</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>Garza</label>
@@ -154,7 +157,7 @@
     <longitude>-101.2984114</longitude>
     <value>2</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>Eastland</label>
@@ -162,7 +165,7 @@
     <longitude>-98.8385688</longitude>
     <value>2</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>Bailey</label>
@@ -170,7 +173,7 @@
     <longitude>-102.8298264</longitude>
     <value>2</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>Rockwall</label>
@@ -178,7 +181,7 @@
     <longitude>-96.40769484</longitude>
     <value>1</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>Reeves</label>
@@ -186,7 +189,7 @@
     <longitude>-103.7467936</longitude>
     <value>1</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>Randall</label>
@@ -194,7 +197,7 @@
     <longitude>-101.8971322</longitude>
     <value>1</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>Potter</label>
@@ -202,7 +205,7 @@
     <longitude>-101.893964</longitude>
     <value>1</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>Lamb</label>
@@ -210,7 +213,7 @@
     <longitude>-102.3516289</longitude>
     <value>1</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>Hardeman</label>
@@ -218,7 +221,7 @@
     <longitude>-99.76745715</longitude>
     <value>1</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>Erath</label>
@@ -226,7 +229,7 @@
     <longitude>-98.22424497</longitude>
     <value>1</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>Collin</label>
@@ -234,7 +237,7 @@
     <longitude>-96.57267133</longitude>
     <value>1</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>Carson</label>
@@ -242,7 +245,7 @@
     <longitude>-101.3538738</longitude>
     <value>1</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>Brown</label>
@@ -250,7 +253,7 @@
     <longitude>-98.97718319</longitude>
     <value>1</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>Brewster</label>
@@ -258,7 +261,7 @@
     <longitude>-103.2525442</longitude>
     <value>1</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>Borden</label>
@@ -266,7 +269,7 @@
     <longitude>-101.4320028</longitude>
     <value>1</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <dataPoint>
     <label>Atascosa</label>
@@ -274,9 +277,9 @@
     <longitude>-98.5338941</longitude>
     <value>1</value>
     <showLabel>0</showLabel>
-    <showValue>0</showValue>
+    <showValue>1</showValue>
   </dataPoint>
   <source>Texas Department of State Health Services</source>
-  <date>As of May 29, 2025</date>
+  <date>As of Jun 11, 2025</date>
   <qualifier> </qualifier>
 </chart>

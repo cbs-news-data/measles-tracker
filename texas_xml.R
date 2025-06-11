@@ -20,18 +20,19 @@ tx_current_for_XML <- tx_current %>%
          value = Measure.Values) %>% 
   mutate(showLabel = case_when(label == max_county ~ 1,
                                TRUE ~ 0),
-         showValue = 0)
+         showValue = 1) #if showValue = 1, then dot will be theme colored and scaled appropriately, if showValue = 0 then dot will be black 
 
 #variables 
 xml_title <- "Measles cases in Texas counties"
 xml_subtitle <- " "
-xml_maxValue <- max(tx_current$Measure.Values) #max value for dots
+xml_maxValue <- max(tx_current$Measure.Values) #max value for dots (if maxValue = 0 then single dot size)
+xml_maxDiameter <- 15
 xml_source <- "Texas Department of State Health Services"
 xml_date <- paste0("As of ", today_pretty)
-xml_type <- "map" #line, bar, pie, etc
-xml_geography <- "TX"
+xml_type <- "dotMap" #line, bar, pie, etc
+xml_mapFocus <- "TX"
 xml_qualifier <- " " #one line note, if needed
-
+xml_showCountyLines <- 1 #if 1, will show county borders when mapFocus is on a state (slows load time), if 0, does not show borders (faster load time)
 
 # Create chart node
 chart_xml <- xml_new_root("chart")
@@ -41,6 +42,9 @@ xml_add_child(chart_xml, "title", xml_title)
 xml_add_child(chart_xml, "subtitle", xml_subtitle)
 xml_add_child(chart_xml, "type", xml_type)
 xml_add_child(chart_xml, "maxValue", xml_maxValue)
+xml_add_child(chart_xml, "maxDiameter", xml_maxDiameter)
+xml_add_child(chart_xml, "mapFocus", xml_mapFocus)
+xml_add_child(chart_xml, "showCountyLines", xml_showCountyLines)
 
 # Add data rows
 for (i in 1:nrow(tx_current_for_XML)) {
