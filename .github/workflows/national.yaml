@@ -5,7 +5,10 @@ on:
     branches:
       - main
   schedule:
-    - cron: "0 * * * 5" # runs the job 4 times every Friday — at midnight, 6 AM, noon, and 6 PM UTC.
+    - cron: "0 0 * * 3"
+    - cron: "0 6 * * 3"
+    - cron: "0 12 * * 3"
+    - cron: "0 18 * * 3"
   workflow_dispatch:
 
 jobs:
