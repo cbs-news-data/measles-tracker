@@ -63,7 +63,7 @@ dw_edit_chart(
   chart_id = "Xf256",
   api_key = dw_api_key,
   annotate = paste(
-    "Last updated", formatted_datetime, "<br>Note: Current year case counts are preliminary."),
+    "Last updated", formatted_datetime, "<br>Note: CDC updates data every Wednesday. Current year case counts are preliminary."),
   folderId = "299930"
 )
 

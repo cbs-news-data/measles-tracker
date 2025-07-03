@@ -94,7 +94,7 @@ dw_edit_chart(
   chart_id = "qOFbx",
   api_key = dw_api_key,
   title = "Vaccination status among current cases",
-  intro <- paste0(
+  intro = paste0(
     "Of the <b>",
     prettyNum(total_cases, big.mark = ",", scientific = FALSE),
     "</b> cases in the U.S., ",
@@ -104,7 +104,10 @@ dw_edit_chart(
     at_least_one_dose,
     "%</span></b> have received at least one dose of the MMR vaccine."
   ),
-  annotate = paste("Numbers may not add to 100% due to rounding. Last updated", formatted_datetime),
+  annotate = paste(
+    "Last updated", formatted_datetime,
+    "<br>Note: Numbers may not add to 100% due to rounding."
+  ),
   byline = "Taylor Johnston / CBS News",
   source_name = "CDC",
   source_url = "https://www.cdc.gov/measles/data-research/index.html",

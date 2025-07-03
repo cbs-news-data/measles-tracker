@@ -90,7 +90,7 @@ dw_edit_chart(
   title = "Measles cases by state",
   intro = paste("So far this year, the U.S. has reported <b>", prettyNum(total_cases, big.mark = ",", scientific = FALSE), "</b> cases."),
   annotate = paste(
-    "Last updated", formatted_datetime, "<br>Note: CDC updates data every Friday."),
+    "Last updated", formatted_datetime, "<br>Note: CDC updates data every Wednesday. Current year case counts are preliminary."),
   byline = "Taylor Johnston / CBS News",
   source_name = "CDC",
   source_url = "https://www.cdc.gov/measles/data-research/index.html",
