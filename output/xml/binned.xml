@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chart>
   <title>Reported measles cases, 2025</title>
-  <subtitle>So far this year: 1168 confirmed cases</subtitle>
+  <subtitle>So far this year: 1267 confirmed cases</subtitle>
   <legendLabel>Confirmed Cases by State</legendLabel>
   <type>map</type>
   <bins>6</bins>
@@ -23,7 +23,7 @@
   </dataPoint>
   <dataPoint>
     <label>Arizona</label>
-    <value>0</value>
+    <value>1-9</value>
     <showValue>0</showValue>
     <showLabel>0</showLabel>
     <valueToShow/>
@@ -233,7 +233,7 @@
   </dataPoint>
   <dataPoint>
     <label>North Carolina</label>
-    <value>0</value>
+    <value>1-9</value>
     <showValue>0</showValue>
     <showLabel>0</showLabel>
     <valueToShow/>
@@ -261,7 +261,7 @@
   </dataPoint>
   <dataPoint>
     <label>Oregon</label>
-    <value>0</value>
+    <value>1-9</value>
     <showValue>0</showValue>
     <showLabel>0</showLabel>
     <valueToShow/>
@@ -310,7 +310,7 @@
   </dataPoint>
   <dataPoint>
     <label>Utah</label>
-    <value>0</value>
+    <value>1-9</value>
     <showValue>0</showValue>
     <showLabel>0</showLabel>
     <valueToShow/>
@@ -331,10 +331,10 @@
   </dataPoint>
   <dataPoint>
     <label>Washington</label>
-    <value>1-9</value>
-    <showValue>0</showValue>
-    <showLabel>0</showLabel>
-    <valueToShow/>
+    <value>10-49</value>
+    <showValue>1</showValue>
+    <showLabel>1</showLabel>
+    <valueToShow>10-49</valueToShow>
   </dataPoint>
   <dataPoint>
     <label>West Virginia</label>
@@ -372,6 +372,6 @@
     <valueToShow/>
   </dataPoint>
   <source>CDC</source>
-  <date>As of June  6, 2025 at  2 PM EDT.</date>
+  <date>As of July  3, 2025 at  1 PM EDT.</date>
   <qualifier> </qualifier>
 </chart>
