@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chart>
   <title>Reported measles cases, 2025</title>
-  <subtitle>So far this year: 1267 confirmed cases</subtitle>
+  <subtitle>So far this year: 1912 confirmed cases</subtitle>
   <legendLabel>Confirmed Cases by State</legendLabel>
   <type>map</type>
   <bins>6</bins>
@@ -9,7 +9,7 @@
   <binsMax>250</binsMax>
   <dataPoint>
     <label>Alabama</label>
-    <value>0</value>
+    <value>1-9</value>
     <showValue>0</showValue>
     <showLabel>0</showLabel>
     <valueToShow/>
@@ -23,7 +23,7 @@
   </dataPoint>
   <dataPoint>
     <label>Arizona</label>
-    <value>1-9</value>
+    <value>100-250</value>
     <showValue>0</showValue>
     <showLabel>0</showLabel>
     <valueToShow/>
@@ -72,10 +72,10 @@
   </dataPoint>
   <dataPoint>
     <label>Georgia</label>
-    <value>1-9</value>
-    <showValue>0</showValue>
-    <showLabel>0</showLabel>
-    <valueToShow/>
+    <value>10-49</value>
+    <showValue>1</showValue>
+    <showLabel>1</showLabel>
+    <valueToShow>10-49</valueToShow>
   </dataPoint>
   <dataPoint>
     <label>Hawaii</label>
@@ -86,10 +86,10 @@
   </dataPoint>
   <dataPoint>
     <label>Idaho</label>
-    <value>0</value>
-    <showValue>0</showValue>
-    <showLabel>0</showLabel>
-    <valueToShow/>
+    <value>10-49</value>
+    <showValue>1</showValue>
+    <showLabel>1</showLabel>
+    <valueToShow>10-49</valueToShow>
   </dataPoint>
   <dataPoint>
     <label>Illinois</label>
@@ -100,10 +100,10 @@
   </dataPoint>
   <dataPoint>
     <label>Indiana</label>
-    <value>1-9</value>
-    <showValue>0</showValue>
-    <showLabel>0</showLabel>
-    <valueToShow/>
+    <value>10-49</value>
+    <showValue>1</showValue>
+    <showLabel>1</showLabel>
+    <valueToShow>10-49</valueToShow>
   </dataPoint>
   <dataPoint>
     <label>Iowa</label>
@@ -121,10 +121,10 @@
   </dataPoint>
   <dataPoint>
     <label>Kentucky</label>
-    <value>1-9</value>
-    <showValue>0</showValue>
-    <showLabel>0</showLabel>
-    <valueToShow/>
+    <value>10-49</value>
+    <showValue>1</showValue>
+    <showLabel>1</showLabel>
+    <valueToShow>10-49</valueToShow>
   </dataPoint>
   <dataPoint>
     <label>Louisiana</label>
@@ -163,10 +163,10 @@
   </dataPoint>
   <dataPoint>
     <label>Minnesota</label>
-    <value>1-9</value>
-    <showValue>0</showValue>
-    <showLabel>0</showLabel>
-    <valueToShow/>
+    <value>10-49</value>
+    <showValue>1</showValue>
+    <showLabel>1</showLabel>
+    <valueToShow>10-49</valueToShow>
   </dataPoint>
   <dataPoint>
     <label>Mississippi</label>
@@ -198,7 +198,7 @@
   </dataPoint>
   <dataPoint>
     <label>Nevada</label>
-    <value>0</value>
+    <value>1-9</value>
     <showValue>0</showValue>
     <showLabel>0</showLabel>
     <valueToShow/>
@@ -212,28 +212,28 @@
   </dataPoint>
   <dataPoint>
     <label>New Jersey</label>
-    <value>1-9</value>
-    <showValue>0</showValue>
-    <showLabel>0</showLabel>
-    <valueToShow/>
+    <value>10-49</value>
+    <showValue>1</showValue>
+    <showLabel>1</showLabel>
+    <valueToShow>10-49</valueToShow>
   </dataPoint>
   <dataPoint>
     <label>New Mexico</label>
-    <value>50-99</value>
-    <showValue>1</showValue>
-    <showLabel>1</showLabel>
-    <valueToShow>50-99</valueToShow>
-  </dataPoint>
-  <dataPoint>
-    <label>New York</label>
-    <value>1-9</value>
+    <value>100-250</value>
     <showValue>0</showValue>
     <showLabel>0</showLabel>
     <valueToShow/>
   </dataPoint>
   <dataPoint>
+    <label>New York</label>
+    <value>10-49</value>
+    <showValue>1</showValue>
+    <showLabel>1</showLabel>
+    <valueToShow>10-49</valueToShow>
+  </dataPoint>
+  <dataPoint>
     <label>North Carolina</label>
-    <value>1-9</value>
+    <value>0</value>
     <showValue>0</showValue>
     <showLabel>0</showLabel>
     <valueToShow/>
@@ -282,17 +282,17 @@
   </dataPoint>
   <dataPoint>
     <label>South Carolina</label>
-    <value>0</value>
+    <value>100-250</value>
     <showValue>0</showValue>
     <showLabel>0</showLabel>
     <valueToShow/>
   </dataPoint>
   <dataPoint>
     <label>South Dakota</label>
-    <value>1-9</value>
-    <showValue>0</showValue>
-    <showLabel>0</showLabel>
-    <valueToShow/>
+    <value>10-49</value>
+    <showValue>1</showValue>
+    <showLabel>1</showLabel>
+    <valueToShow>10-49</valueToShow>
   </dataPoint>
   <dataPoint>
     <label>Tennessee</label>
@@ -303,14 +303,14 @@
   </dataPoint>
   <dataPoint>
     <label>Texas</label>
-    <value>700+</value>
+    <value>800+</value>
     <showValue>0</showValue>
     <showLabel>0</showLabel>
     <valueToShow/>
   </dataPoint>
   <dataPoint>
     <label>Utah</label>
-    <value>1-9</value>
+    <value>100-250</value>
     <showValue>0</showValue>
     <showLabel>0</showLabel>
     <valueToShow/>
@@ -345,14 +345,14 @@
   </dataPoint>
   <dataPoint>
     <label>Wisconsin</label>
-    <value>0</value>
-    <showValue>0</showValue>
-    <showLabel>0</showLabel>
-    <valueToShow/>
+    <value>10-49</value>
+    <showValue>1</showValue>
+    <showLabel>1</showLabel>
+    <valueToShow>10-49</valueToShow>
   </dataPoint>
   <dataPoint>
     <label>Wyoming</label>
-    <value>0</value>
+    <value>1-9</value>
     <showValue>0</showValue>
     <showLabel>0</showLabel>
     <valueToShow/>
@@ -366,12 +366,12 @@
   </dataPoint>
   <dataPoint>
     <label>New York City</label>
-    <value>1-9</value>
-    <showValue>0</showValue>
-    <showLabel>0</showLabel>
-    <valueToShow/>
+    <value>10-49</value>
+    <showValue>1</showValue>
+    <showLabel>1</showLabel>
+    <valueToShow>10-49</valueToShow>
   </dataPoint>
   <source>CDC</source>
-  <date>As of July  3, 2025 at  1 PM EDT.</date>
+  <date>As of December 11, 2025 at 10 AM EDT.</date>
   <qualifier> </qualifier>
 </chart>

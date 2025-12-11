@@ -57,7 +57,18 @@ measles_by_year <- fromJSON("https://www.cdc.gov/wcms/vizdata/measles/MeaslesCas
   as.data.frame() %>% 
   janitor::clean_names()
 
-dw_data_to_chart(cases_by_year, "Xf256", api_key = dw_api_key)
+dw_data_to_chart(cases_by_year, "HFajI", api_key = dw_api_key)
+
+dw_edit_chart(
+  chart_id = "HFajI",
+  api_key = dw_api_key,
+  annotate = paste(
+    "Last updated", formatted_datetime, "<br>Note: CDC updates data every Wednesday. Current year case counts are preliminary."),
+  folderId = "299930"
+)
+
+# Publish the chart
+dw_publish_chart(chart_id = "HFajI")
 
 dw_edit_chart(
   chart_id = "Xf256",
