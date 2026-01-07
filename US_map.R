@@ -34,30 +34,17 @@ state_abbreviations <- data.frame(
 )
 
 # Read JSON data
-measles_data <- fromJSON("https://www.cdc.gov/wcms/vizdata/measles/MeaslesCasesMap.json") %>% filter(year == "2025") %>% 
+measles_data <- fromJSON("https://www.cdc.gov/wcms/vizdata/measles/MeaslesCasesMap.json") %>% filter(year == "2026") %>% 
   as.data.frame() %>% 
   janitor::clean_names() %>%
   rename(state = geography)  # Rename geography column to state
 
 # Read JSON data for total cases by year to get 2025 total cases
-total_cases_2025 <- fromJSON("https://www.cdc.gov/wcms/vizdata/measles/MeaslesCasesYear.json") %>% 
-  filter(year == "2025") %>% 
+total_cases_2026 <- fromJSON("https://www.cdc.gov/wcms/vizdata/measles/MeaslesCasesYear.json") %>% 
+  filter(year == "2026") %>% 
   filter(filter == "2000-Present*")
 
-total_cases <- as.numeric(total_cases_2025$cases)
-
-# # URL of the webpage (replace with the actual URL)
-# url <- "https://www.cdc.gov/measles/data-research/index.html"  # Example, update with the actual URL
-# 
-# # Read the webpage
-# page <- read_html(url)
-# 
-# 
-# # Extract total cases
-# total_cases <- page %>%
-#   html_node(xpath = '//*[@id="Total_Cases"]') %>%
-#   html_text() #%>%
-#   as.numeric()
+total_cases <- as.numeric(total_cases_2026$cases)
 
 # Print the total cases to verify
 print(total_cases)
@@ -70,7 +57,6 @@ measles_data <- state_abbreviations %>%
 # Get current date and time in UTC
 current_datetime_utc <- Sys.time()
 
-
 # Convert UTC to Eastern Time
 current_datetime_eastern <- with_tz(current_datetime_utc, "America/New_York")
 
@@ -78,50 +64,27 @@ current_datetime_eastern <- with_tz(current_datetime_utc, "America/New_York")
 rounded_datetime <- round_date(current_datetime_eastern, "hour")
 
 # Format the date and time
-formatted_datetime <- format(rounded_datetime, "%B %e, %Y at %l %p EDT.")
+formatted_datetime <- format(rounded_datetime, "%B %e, %Y at %l %p ET.")
 
 # Make the Datawrapper
 datawrapper_auth(api_key = dw_api_key)
-dw_data_to_chart(measles_data, "IF2bI", api_key = dw_api_key)
+dw_data_to_chart(measles_data, "rSFuD", api_key = dw_api_key)
 
 dw_edit_chart(
-  chart_id = "IF2bI",
+  chart_id = "rSFuD",
   api_key = dw_api_key,
   title = "Measles cases by state",
   intro = paste("So far this year, the U.S. has reported <b>", prettyNum(total_cases, big.mark = ",", scientific = FALSE), "</b> cases."),
   annotate = paste(
-    "Last updated", formatted_datetime, "<br>Note: CDC updates data every Wednesday. Current year case counts are preliminary."),
+    "Last updated", formatted_datetime, "<br>Note: CDC updates data every Tuesday. Current year case counts are preliminary."),
   byline = "Taylor Johnston / CBS News",
   source_name = "CDC",
   source_url = "https://www.cdc.gov/measles/data-research/index.html",
-  folderId = "299930"
+  folderId = "376016"
 )
 
 # Publish the chart
-dw_publish_chart(chart_id = "IF2bI")
-
-
-# BAR CHART
-measles_by_year <- fromJSON("https://www.cdc.gov/wcms/vizdata/measles/MeaslesCasesYear.json") %>% filter(filter == "2000-Present*") %>% select(year, cases)%>% 
-  as.data.frame() %>% 
-  janitor::clean_names()
-
-dw_data_to_chart(measles_by_year, "jUEyd", api_key = dw_api_key)
-
-dw_edit_chart(
-  chart_id = "jUEyd",
-  api_key = dw_api_key,
-  title = "Measles cases by year",
-  annotate = paste(
-    "Last updated", formatted_datetime, "<br>Note: CDC updates data every Wednesday. Current year case counts are preliminary."),
-  byline = "Taylor Johnston / CBS News",
-  source_name = "CDC",
-  source_url = "https://www.cdc.gov/measles/data-research/index.html",
-  folderId = "299930"
-)
-
-# Publish the chart
-dw_publish_chart(chart_id = "jUEyd")
+dw_publish_chart(chart_id = "rSFuD")
 
 write.csv(measles_data, "output/measles_data_clean.csv")
 

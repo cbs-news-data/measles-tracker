@@ -45,13 +45,10 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Run script
-        run: Rscript -e 'source("national_script.R")'
+        run: Rscript -e 'source("US_map.R")'
         
       - name: Run script
         run: Rscript -e 'source("cases.R")'
-        
-      - name: Run script
-        run: Rscript -e 'source("vax-status.R")'
 
       - name: Commit results
         run: |

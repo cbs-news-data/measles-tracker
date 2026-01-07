@@ -28,7 +28,7 @@ measles_by_year <- fromJSON("https://www.cdc.gov/wcms/vizdata/measles/MeaslesCas
   select(year, cases) %>% 
   as.data.frame() %>% 
   janitor::clean_names() %>%
-  filter(year %in% c("2024", "2025")) %>%  # Proper filtering
+  filter(year %in% c("2024", "2025", "2026")) %>%  # Proper filtering
   mutate(year = as.character(year), cases = as.numeric(cases))  # Ensure correct types
 
 # Append new data and handle duplicate years (keep latest value)
@@ -50,25 +50,25 @@ current_datetime_eastern <- with_tz(current_datetime_utc, "America/New_York")
 rounded_datetime <- round_date(current_datetime_eastern, "hour")
 
 # Format the date and time
-formatted_datetime <- format(rounded_datetime, "%B %e, %Y at %l %p EDT.")
+formatted_datetime <- format(rounded_datetime, "%B %e, %Y at %l %p ET.")
 
 # Update the chart
 measles_by_year <- fromJSON("https://www.cdc.gov/wcms/vizdata/measles/MeaslesCasesYear.json") %>% filter(filter == "2000-Present*") %>% select(year, cases)%>% 
   as.data.frame() %>% 
   janitor::clean_names()
 
-dw_data_to_chart(cases_by_year, "HFajI", api_key = dw_api_key)
+dw_data_to_chart(cases_by_year, "svjga", api_key = dw_api_key)
 
 dw_edit_chart(
-  chart_id = "HFajI",
+  chart_id = "svjga",
   api_key = dw_api_key,
   annotate = paste(
-    "Last updated", formatted_datetime, "<br>Note: CDC updates data every Wednesday. Current year case counts are preliminary."),
-  folderId = "299930"
+    "Last updated", formatted_datetime, "<br>Note: CDC updates data every Tuesday. Current year case counts are preliminary."),
+  folderId = "376016"
 )
 
 # Publish the chart
-dw_publish_chart(chart_id = "HFajI")
+dw_publish_chart(chart_id = "svjga")
 
 dw_edit_chart(
   chart_id = "Xf256",
