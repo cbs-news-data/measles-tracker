@@ -67,16 +67,19 @@ dw_edit_chart(
   folderId = "376016"
 )
 
-# Publish the chart
-dw_publish_chart(chart_id = "svjga")
+# 2000 - present chart
+measles_by_year <- fromJSON("https://www.cdc.gov/wcms/vizdata/measles/MeaslesCasesYear.json") %>% filter(filter == "2000-Present*") %>% select(year, cases)%>% 
+  as.data.frame() %>% 
+  janitor::clean_names()
+
+dw_data_to_chart(measles_by_year, "kEJYS", api_key = dw_api_key)
 
 dw_edit_chart(
-  chart_id = "Xf256",
+  chart_id = "kEJYS",
   api_key = dw_api_key,
   annotate = paste(
-    "Last updated", formatted_datetime, "<br>Note: CDC updates data every Wednesday. Current year case counts are preliminary."),
-  folderId = "299930"
+    "Last updated", formatted_datetime, "<br>Note: CDC updates data every Tuesday. Current year case counts are preliminary."),
+  folderId = "376016"
 )
 
-# Publish the chart
-dw_publish_chart(chart_id = "Xf256")
+

@@ -33,21 +33,36 @@ state_abbreviations <- data.frame(
                    "TX", "UT", "VT", "VA", "WA", "WV", "WI", "WY")
 )
 
-# Read JSON data
-measles_data <- fromJSON("https://www.cdc.gov/wcms/vizdata/measles/MeaslesCasesMap.json") %>% filter(year == "2026") %>% 
-  as.data.frame() %>% 
+measles_data <- fromJSON(
+  "https://www.cdc.gov/wcms/vizdata/measles/MeaslesCasesMap.json"
+) %>%
+  as.data.frame() %>%
   janitor::clean_names() %>%
-  rename(state = geography)  # Rename geography column to state
+  rename(state = geography) %>%
+  mutate(
+    cases_2025 = as.numeric(cases_2025),
+    cases_2026 = as.numeric(cases_2026)
+  ) %>%
+  group_by(state) %>%
+  summarise(
+    cases_2025 = max(cases_2025, na.rm = TRUE),
+    cases_2026 = max(cases_2026, na.rm = TRUE),
+    total_cases = cases_2025 + cases_2026,
+    .groups = "drop"
+  ) %>%
+  select(state, total_cases, cases_2025, cases_2026)
 
-# Read JSON data for total cases by year to get 2025 total cases
+# Read JSON data for total cases by year to get 2025 and 2026 total cases
 total_cases_2026 <- fromJSON("https://www.cdc.gov/wcms/vizdata/measles/MeaslesCasesYear.json") %>% 
   filter(year == "2026") %>% 
   filter(filter == "2000-Present*")
 
-total_cases <- as.numeric(total_cases_2026$cases)
+total_cases_2025 <- fromJSON("https://www.cdc.gov/wcms/vizdata/measles/MeaslesCasesYear.json") %>% 
+  filter(year == "2025") %>% 
+  filter(filter == "2000-Present*")
 
-# Print the total cases to verify
-print(total_cases)
+total_cases_2026 <- as.numeric(total_cases_2026$cases)
+total_cases_2025 <- as.numeric(total_cases_2025$cases)
 
 # Merge with state abbreviations (keeping all states)
 measles_data <- state_abbreviations %>%
@@ -73,8 +88,8 @@ dw_data_to_chart(measles_data, "rSFuD", api_key = dw_api_key)
 dw_edit_chart(
   chart_id = "rSFuD",
   api_key = dw_api_key,
-  title = "Measles cases by state",
-  intro = paste("So far this year, the U.S. has reported <b>", prettyNum(total_cases, big.mark = ",", scientific = FALSE), "</b> cases."),
+  title = "Total reported measles cases from 2025 to present",
+  intro = paste("So far this year, the U.S. has reported <b>", prettyNum(total_cases_2026, big.mark = ",", scientific = FALSE), "</b> cases. Last year, <b>", prettyNum(total_cases_2025,big.mark = ",", scientific = FALSE), "</b> cases were reported. Click or hover over a state to see more information."),
   annotate = paste(
     "Last updated", formatted_datetime, "<br>Note: CDC updates data every Tuesday. Current year case counts are preliminary."),
   byline = "Taylor Johnston / CBS News",
@@ -86,88 +101,91 @@ dw_edit_chart(
 # Publish the chart
 dw_publish_chart(chart_id = "rSFuD")
 
+
+# COMBINED MAP
+
 write.csv(measles_data, "output/measles_data_clean.csv")
 
 # Write XML to file - BINNED
 
 # Define necessary variables
-xml_title <- "Reported measles cases, 2025"
-print(xml_title)
-xml_subtitle <- paste("So far this year:", total_cases, "confirmed cases")
-xml_source <- "CDC"
-xml_date <- paste0("As of ", formatted_datetime)
-xml_type <- "map"  # Map chart type
-xml_qualifier <- " "  # One-line note, if needed
-
-# Define xml_legendLabel variable (provide a suitable value)
-xml_legendLabel <- "Confirmed Cases by State"  # Add this line to define the legend label
-
-# Make sure data is cleaned and correctly formatted
-measles_data_binned <- measles_data %>% rename(value = cases_range)
-
-# Check the structure of WN_data_clean to verify column names and contents
-print(str(measles_data_binned))
-
-# Add binned data to the dataframe
-measles_data_binned <- measles_data
-
-# Define bins and labels
-# Define bins and labels
-bins <- c(0, 1, 10, 50, 100, 250, Inf)
-# Use this predefined order of bins
-labels <- c("0", "1-9", "10-49", "50-99", "100-249", "250+")
-
-# Generate pipe-separated labels for XML
-xml_binsLabels <- paste(labels, collapse = "|")
-xml_bins <- length(labels)
-xml_binsMax <- 250  # Still true
-
-# Use the data as-is
-measles_data_clean_binned <- measles_data_binned %>%
-  select(label = state, value = cases_range)
-
-# For top 3, use a custom order
-# We'll convert labels into numeric midpoints to rank them
-label_midpoints <- c("0" = 0, "1-9" = 5, "10-49" = 30, "50-99" = 75, "100-249" = 175, "250+" = 300)
-
-measles_data_clean_binned$numeric_value <- label_midpoints[measles_data_clean_binned$value]
-
-top_3_values_binned <- measles_data_clean_binned %>%
-  arrange(desc(numeric_value)) %>%
-  head(3)
-
-# Start XML
-measles_map_binned <- xml_new_root("chart")
-xml_add_child(measles_map_binned, "title", xml_title)
-xml_add_child(measles_map_binned, "subtitle", xml_subtitle)
-xml_add_child(measles_map_binned, "legendLabel", xml_legendLabel)
-xml_add_child(measles_map_binned, "type", xml_type)
-xml_add_child(measles_map_binned, "bins", as.character(xml_bins))
-xml_add_child(measles_map_binned, "binsLabels", xml_binsLabels)
-xml_add_child(measles_map_binned, "binsMax", as.character(xml_binsMax))
-
-# Add data rows
-for (i in 1:nrow(measles_data_clean_binned)) {
-  row_node <- xml_add_child(measles_map_binned, "dataPoint")
-  
-  label_value <- as.character(measles_data_clean_binned$label[i])
-  value_value <- as.character(measles_data_clean_binned$value[i])
-  num_value <- measles_data_clean_binned$numeric_value[i]
-  
-  xml_add_child(row_node, "label", label_value)
-  xml_add_child(row_node, "value", value_value)
-  
-  is_top <- num_value %in% top_3_values_binned$numeric_value
-  
-  xml_add_child(row_node, "showValue", ifelse(is_top, "1", "0"))
-  xml_add_child(row_node, "showLabel", ifelse(is_top, "1", "0"))
-  xml_add_child(row_node, "valueToShow", ifelse(is_top, value_value, ""))
-}
-
-# Footer info
-xml_add_child(measles_map_binned, "source", xml_source)
-xml_add_child(measles_map_binned, "date", xml_date)
-xml_add_child(measles_map_binned, "qualifier", xml_qualifier)
-
-# Save XML
-write_xml(measles_map_binned, "output/xml/binned.xml")
+# xml_title <- "Reported measles cases, 2025"
+# print(xml_title)
+# xml_subtitle <- paste("So far this year:", total_cases_2026, "confirmed cases. In 2025, there was a total of", total_cases_2025, "confirmed cases." )
+# xml_source <- "CDC"
+# xml_date <- paste0("As of ", formatted_datetime)
+# xml_type <- "map"  # Map chart type
+# xml_qualifier <- " "  # One-line note, if needed
+# 
+# # Define xml_legendLabel variable (provide a suitable value)
+# xml_legendLabel <- "Confirmed Cases by State"  # Add this line to define the legend label
+# 
+# # Make sure data is cleaned and correctly formatted
+# measles_data_binned <- measles_data %>% rename(value = cases)
+# 
+# # Check the structure of WN_data_clean to verify column names and contents
+# print(str(measles_data_binned))
+# 
+# # Add binned data to the dataframe
+# measles_data_binned <- measles_data
+# 
+# # Define bins and labels
+# # Define bins and labels
+# bins <- c(0, 1, 10, 50, 100, 250, Inf)
+# # Use this predefined order of bins
+# labels <- c("0", "1-9", "10-49", "50-99", "100-249", "250+")
+# 
+# # Generate pipe-separated labels for XML
+# xml_binsLabels <- paste(labels, collapse = "|")
+# xml_bins <- length(labels)
+# xml_binsMax <- 250  # Still true
+# 
+# # Use the data as-is
+# measles_data_clean_binned <- measles_data_binned %>%
+#   select(label = state, value = cases_range)
+# 
+# # For top 3, use a custom order
+# # We'll convert labels into numeric midpoints to rank them
+# label_midpoints <- c("0" = 0, "1-9" = 5, "10-49" = 30, "50-99" = 75, "100-249" = 175, "250+" = 300)
+# 
+# measles_data_clean_binned$numeric_value <- label_midpoints[measles_data_clean_binned$value]
+# 
+# top_3_values_binned <- measles_data_clean_binned %>%
+#   arrange(desc(numeric_value)) %>%
+#   head(3)
+# 
+# # Start XML
+# measles_map_binned <- xml_new_root("chart")
+# xml_add_child(measles_map_binned, "title", xml_title)
+# xml_add_child(measles_map_binned, "subtitle", xml_subtitle)
+# xml_add_child(measles_map_binned, "legendLabel", xml_legendLabel)
+# xml_add_child(measles_map_binned, "type", xml_type)
+# xml_add_child(measles_map_binned, "bins", as.character(xml_bins))
+# xml_add_child(measles_map_binned, "binsLabels", xml_binsLabels)
+# xml_add_child(measles_map_binned, "binsMax", as.character(xml_binsMax))
+# 
+# # Add data rows
+# for (i in 1:nrow(measles_data_clean_binned)) {
+#   row_node <- xml_add_child(measles_map_binned, "dataPoint")
+#   
+#   label_value <- as.character(measles_data_clean_binned$label[i])
+#   value_value <- as.character(measles_data_clean_binned$value[i])
+#   num_value <- measles_data_clean_binned$numeric_value[i]
+#   
+#   xml_add_child(row_node, "label", label_value)
+#   xml_add_child(row_node, "value", value_value)
+#   
+#   is_top <- num_value %in% top_3_values_binned$numeric_value
+#   
+#   xml_add_child(row_node, "showValue", ifelse(is_top, "1", "0"))
+#   xml_add_child(row_node, "showLabel", ifelse(is_top, "1", "0"))
+#   xml_add_child(row_node, "valueToShow", ifelse(is_top, value_value, ""))
+# }
+# 
+# # Footer info
+# xml_add_child(measles_map_binned, "source", xml_source)
+# xml_add_child(measles_map_binned, "date", xml_date)
+# xml_add_child(measles_map_binned, "qualifier", xml_qualifier)
+# 
+# # Save XML
+# write_xml(measles_map_binned, "output/xml/binned.xml")# 
