@@ -26,7 +26,7 @@
     <value>100-249</value>
     <showValue>1</showValue>
     <showLabel>1</showLabel>
-    <valueToShow>100-249</valueToShow>
+    <valueToShow>175</valueToShow>
   </dataPoint>
   <dataPoint>
     <label>Arkansas</label>
@@ -222,7 +222,7 @@
     <value>100-249</value>
     <showValue>1</showValue>
     <showLabel>1</showLabel>
-    <valueToShow>100-249</valueToShow>
+    <valueToShow>175</valueToShow>
   </dataPoint>
   <dataPoint>
     <label>New York</label>
@@ -285,7 +285,7 @@
     <value>100-249</value>
     <showValue>1</showValue>
     <showLabel>1</showLabel>
-    <valueToShow>100-249</valueToShow>
+    <valueToShow>175</valueToShow>
   </dataPoint>
   <dataPoint>
     <label>South Dakota</label>
@@ -306,14 +306,14 @@
     <value>250+</value>
     <showValue>1</showValue>
     <showLabel>1</showLabel>
-    <valueToShow>250+</valueToShow>
+    <valueToShow>300</valueToShow>
   </dataPoint>
   <dataPoint>
     <label>Utah</label>
     <value>100-249</value>
     <showValue>1</showValue>
     <showLabel>1</showLabel>
-    <valueToShow>100-249</valueToShow>
+    <valueToShow>175</valueToShow>
   </dataPoint>
   <dataPoint>
     <label>Vermont</label>

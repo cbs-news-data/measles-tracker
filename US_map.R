@@ -151,7 +151,7 @@ measles_data_clean_binned <- measles_data_binned %>%
                                  (total_cases >= 100 & total_cases <= 249) ~ "100-249",
                                  (total_cases >= 250) ~ "250+",
                                  TRUE ~ NA)) %>% 
-  select(label = state, value = cases_range)
+  select(label = state, numeric_value = total_cases, value = cases_range)
 # 
 # # For top 3, use a custom order
 # # We'll convert labels into numeric midpoints to rank them
@@ -188,7 +188,7 @@ for (i in 1:nrow(measles_data_clean_binned)) {
 
   xml_add_child(row_node, "showValue", ifelse(is_top, "1", "0"))
   xml_add_child(row_node, "showLabel", ifelse(is_top, "1", "0"))
-  xml_add_child(row_node, "valueToShow", ifelse(is_top, value_value, ""))
+  xml_add_child(row_node, "valueToShow", ifelse(is_top, num_value, ""))
 }
 # 
 # # Footer info
