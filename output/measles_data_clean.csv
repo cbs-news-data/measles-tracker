@@ -1,16 +1,16 @@
 "","state","abbreviation","total_cases","cases_2025","cases_2026"
 "1","Alabama","AL",1,1,0
 "2","Alaska","AK",4,4,0
-"3","Arizona","AZ",205,205,0
+"3","Arizona","AZ",214,213,1
 "4","Arkansas","AR",8,8,0
-"5","California","CA",25,25,0
+"5","California","CA",26,26,0
 "6","Colorado","CO",35,35,0
 "7","Connecticut","CT",1,1,0
 "8","Delaware","DE",0,0,0
-"9","Florida","FL",7,7,0
-"10","Georgia","GA",10,10,0
+"9","Florida","FL",10,8,2
+"10","Georgia","GA",11,10,1
 "11","Hawaii","HI",2,2,0
-"12","Idaho","ID",13,13,0
+"12","Idaho","ID",14,14,0
 "13","Illinois","IL",14,14,0
 "14","Indiana","IN",10,10,0
 "15","Iowa","IA",9,9,0
@@ -31,20 +31,20 @@
 "30","New Jersey","NJ",11,11,0
 "31","New Mexico","NM",100,100,0
 "32","New York","NY",26,26,0
-"33","North Carolina","NC",3,2,1
+"33","North Carolina","NC",4,2,2
 "34","North Dakota","ND",36,36,0
-"35","Ohio","OH",40,40,0
+"35","Ohio","OH",43,40,3
 "36","Oklahoma","OK",17,17,0
-"37","Oregon","OR",1,1,0
+"37","Oregon","OR",3,1,2
 "38","Pennsylvania","PA",16,16,0
 "39","Rhode Island","RI",1,1,0
-"40","South Carolina","SC",226,224,2
+"40","South Carolina","SC",444,299,145
 "41","South Dakota","SD",16,16,0
 "42","Tennessee","TN",8,8,0
 "43","Texas","TX",803,803,0
-"44","Utah","UT",176,176,0
+"44","Utah","UT",201,187,14
 "45","Vermont","VT",2,2,0
-"46","Virginia","VA",5,5,0
+"46","Virginia","VA",7,6,1
 "47","Washington","WA",11,11,0
 "48","West Virginia","WV",0,0,0
 "49","Wisconsin","WI",36,36,0

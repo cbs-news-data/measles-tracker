@@ -5,11 +5,11 @@ on:
     branches:
       - main
   schedule:
-    - cron: "45 11 * * 2"  # 11:45 AM Tuesday
-    - cron: "0 12 * * 2"   # 12:00 PM Tuesday
-    - cron: "15 12 * * 2"  # 12:15 PM Tuesday
-    - cron: "30 12 * * 2"  # 12:30 PM Tuesday
-    - cron: "0 13 * * 2"   # 1:00 PM Tuesday
+    - cron: "45 11 * * 5"  # 11:45 AM Friday
+    - cron: "0 12 * * 5"   # 12:00 PM Friday
+    - cron: "15 12 * * 5"  # 12:15 PM Friday
+    - cron: "30 12 * * 5"  # 12:30 PM Friday
+    - cron: "0 13 * * 5"   # 1:00 PM Friday
   workflow_dispatch:
 
 jobs:

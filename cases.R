@@ -63,7 +63,7 @@ dw_edit_chart(
   chart_id = "svjga",
   api_key = dw_api_key,
   annotate = paste(
-    "Last updated", formatted_datetime, "<br>Note: CDC updates data every Tuesday. Current year case counts are preliminary."),
+    "Last updated", formatted_datetime, "<br>Note: CDC updates data every Friday. Current year case counts are preliminary."),
   folderId = "376016"
 )
 
@@ -78,7 +78,7 @@ dw_edit_chart(
   chart_id = "kEJYS",
   api_key = dw_api_key,
   annotate = paste(
-    "Last updated", formatted_datetime, "<br>Note: CDC updates data every Tuesday. Current year case counts are preliminary."),
+    "Last updated", formatted_datetime, "<br>Note: CDC updates data every Friday. Current year case counts are preliminary."),
   folderId = "376016"
 )
 

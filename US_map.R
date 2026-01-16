@@ -92,7 +92,7 @@ dw_edit_chart(
   title = "Total reported measles cases from 2025 to present",
   intro = paste("So far this year, the U.S. has reported <b>", prettyNum(total_cases_2026, big.mark = ",", scientific = FALSE), "</b> cases. Last year, <b>", prettyNum(total_cases_2025,big.mark = ",", scientific = FALSE), "</b> cases were reported. Click or hover over a state to see more information."),
   annotate = paste(
-    "Last updated", formatted_datetime, "<br>Note: CDC updates data every Tuesday. Current year case counts are preliminary."),
+    "Last updated", formatted_datetime, "<br>Note: CDC updates data every Friday. Current year case counts are preliminary."),
   byline = "Taylor Johnston / CBS News",
   source_name = "CDC",
   source_url = "https://www.cdc.gov/measles/data-research/index.html",

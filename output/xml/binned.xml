@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chart>
   <title>Reported measles cases, 2025 to present</title>
-  <subtitle>2,147 total confirmed cases</subtitle>
+  <subtitle>2,413 total confirmed cases</subtitle>
   <legendLabel>Confirmed Cases by State</legendLabel>
   <type>map</type>
   <bins>6</bins>
@@ -65,7 +65,7 @@
   </dataPoint>
   <dataPoint>
     <label>Florida</label>
-    <value>1-9</value>
+    <value>10-49</value>
     <showValue>0</showValue>
     <showLabel>0</showLabel>
     <valueToShow/>
@@ -282,10 +282,10 @@
   </dataPoint>
   <dataPoint>
     <label>South Carolina</label>
-    <value>100-249</value>
+    <value>250+</value>
     <showValue>1</showValue>
     <showLabel>1</showLabel>
-    <valueToShow>175</valueToShow>
+    <valueToShow>300</valueToShow>
   </dataPoint>
   <dataPoint>
     <label>South Dakota</label>
@@ -372,6 +372,6 @@
     <valueToShow/>
   </dataPoint>
   <source>CDC</source>
-  <date>As of January 12, 2026 at  4 PM ET.</date>
+  <date>As of January 16, 2026 at  1 PM ET.</date>
   <qualifier> </qualifier>
 </chart>
