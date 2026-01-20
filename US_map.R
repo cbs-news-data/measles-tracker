@@ -84,10 +84,10 @@ formatted_datetime <- format(rounded_datetime, "%B %e, %Y at %l %p ET.")
 
 # Make the Datawrapper
 datawrapper_auth(api_key = dw_api_key)
-dw_data_to_chart(measles_data, "rSFuD", api_key = dw_api_key)
+dw_data_to_chart(measles_data, "Mw3ej", api_key = dw_api_key)
 
 dw_edit_chart(
-  chart_id = "rSFuD",
+  chart_id = "Mw3ej",
   api_key = dw_api_key,
   title = "Total reported measles cases from 2025 to present",
   intro = paste("So far this year, the U.S. has reported <b>", prettyNum(total_cases_2026, big.mark = ",", scientific = FALSE), "</b> cases. Last year, <b>", prettyNum(total_cases_2025,big.mark = ",", scientific = FALSE), "</b> cases were reported. Click or hover over a state to see more information."),
@@ -100,7 +100,7 @@ dw_edit_chart(
 )
 
 # Publish the chart
-dw_publish_chart(chart_id = "rSFuD")
+dw_publish_chart(chart_id = "Mw3ej")
 
 
 # COMBINED MAP
