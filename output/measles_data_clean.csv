@@ -1,53 +1,53 @@
 "","state","abbreviation","total_cases","cases_2025","cases_2026"
 "1","Alabama","AL",1,1,0
 "2","Alaska","AK",4,4,0
-"3","Arizona","AZ",214,213,1
+"3","Arizona","AZ",241,216,25
 "4","Arkansas","AR",8,8,0
-"5","California","CA",26,26,0
+"5","California","CA",33,26,7
 "6","Colorado","CO",35,35,0
 "7","Connecticut","CT",1,1,0
 "8","Delaware","DE",0,0,0
-"9","Florida","FL",10,8,2
+"9","Florida","FL",21,8,13
 "10","Georgia","GA",11,10,1
 "11","Hawaii","HI",2,2,0
-"12","Idaho","ID",14,14,0
+"12","Idaho","ID",16,14,2
 "13","Illinois","IL",14,14,0
 "14","Indiana","IN",10,10,0
 "15","Iowa","IA",9,9,0
 "16","Kansas","KS",91,91,0
-"17","Kentucky","KY",13,13,0
+"17","Kentucky","KY",17,13,4
 "18","Louisiana","LA",3,3,0
 "19","Maine","ME",0,0,0
 "20","Maryland","MD",3,3,0
 "21","Massachusetts","MA",0,0,0
 "22","Michigan","MI",29,29,0
-"23","Minnesota","MN",26,26,0
+"23","Minnesota","MN",27,26,1
 "24","Mississippi","MS",0,0,0
 "25","Missouri","MO",6,6,0
 "26","Montana","MT",36,36,0
-"27","Nebraska","NE",5,5,0
+"27","Nebraska","NE",6,5,1
 "28","Nevada","NV",2,2,0
 "29","New Hampshire","NH",0,0,0
 "30","New Jersey","NJ",11,11,0
 "31","New Mexico","NM",100,100,0
 "32","New York","NY",26,26,0
-"33","North Carolina","NC",4,2,2
-"34","North Dakota","ND",36,36,0
+"33","North Carolina","NC",14,2,12
+"34","North Dakota","ND",37,36,1
 "35","Ohio","OH",43,40,3
-"36","Oklahoma","OK",17,17,0
-"37","Oregon","OR",3,1,2
-"38","Pennsylvania","PA",16,16,0
+"36","Oklahoma","OK",18,17,1
+"37","Oregon","OR",6,1,5
+"38","Pennsylvania","PA",21,16,5
 "39","Rhode Island","RI",1,1,0
-"40","South Carolina","SC",444,299,145
-"41","South Dakota","SD",16,16,0
+"40","South Carolina","SC",876,330,546
+"41","South Dakota","SD",22,16,6
 "42","Tennessee","TN",8,8,0
 "43","Texas","TX",803,803,0
-"44","Utah","UT",201,187,14
+"44","Utah","UT",259,187,72
 "45","Vermont","VT",2,2,0
-"46","Virginia","VA",7,6,1
-"47","Washington","WA",11,11,0
+"46","Virginia","VA",10,6,4
+"47","Washington","WA",27,11,16
 "48","West Virginia","WV",0,0,0
-"49","Wisconsin","WI",36,36,0
+"49","Wisconsin","WI",38,36,2
 "50","Wyoming","WY",15,15,0
 "51","District of Columbia",NA,0,0,0
 "52","New York City",NA,15,15,0
