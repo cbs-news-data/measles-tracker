@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <chart>
   <title>Reported measles cases, 2025 to present</title>
-  <subtitle>3,009 total confirmed cases</subtitle>
+  <subtitle>3,417 total confirmed cases</subtitle>
   <legendLabel>Confirmed Cases by State</legendLabel>
   <type>map</type>
   <bins>6</bins>
@@ -23,7 +23,7 @@
   </dataPoint>
   <dataPoint>
     <label>Arizona</label>
-    <value>100-249</value>
+    <value>250+</value>
     <showValue>0</showValue>
     <showLabel>0</showLabel>
     <valueToShow/>
@@ -65,7 +65,7 @@
   </dataPoint>
   <dataPoint>
     <label>Florida</label>
-    <value>10-49</value>
+    <value>100-249</value>
     <showValue>0</showValue>
     <showLabel>0</showLabel>
     <valueToShow/>
@@ -135,7 +135,7 @@
   </dataPoint>
   <dataPoint>
     <label>Maine</label>
-    <value>0</value>
+    <value>1-9</value>
     <showValue>0</showValue>
     <showLabel>0</showLabel>
     <valueToShow/>
@@ -240,7 +240,7 @@
   </dataPoint>
   <dataPoint>
     <label>North Dakota</label>
-    <value>10-49</value>
+    <value>50-99</value>
     <showValue>0</showValue>
     <showLabel>0</showLabel>
     <valueToShow/>
@@ -285,7 +285,7 @@
     <value>250+</value>
     <showValue>1</showValue>
     <showLabel>1</showLabel>
-    <valueToShow>300</valueToShow>
+    <valueToShow>982</valueToShow>
   </dataPoint>
   <dataPoint>
     <label>South Dakota</label>
@@ -306,14 +306,14 @@
     <value>250+</value>
     <showValue>1</showValue>
     <showLabel>1</showLabel>
-    <valueToShow>300</valueToShow>
+    <valueToShow>824</valueToShow>
   </dataPoint>
   <dataPoint>
     <label>Utah</label>
     <value>250+</value>
     <showValue>1</showValue>
     <showLabel>1</showLabel>
-    <valueToShow>300</valueToShow>
+    <valueToShow>337</valueToShow>
   </dataPoint>
   <dataPoint>
     <label>Vermont</label>
@@ -372,6 +372,6 @@
     <valueToShow/>
   </dataPoint>
   <source>CDC</source>
-  <date>As of February 11, 2026 at  1 PM ET.</date>
+  <date>As of March  5, 2026 at  3 PM ET.</date>
   <qualifier> </qualifier>
 </chart>

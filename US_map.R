@@ -157,7 +157,7 @@ measles_data_clean_binned <- measles_data_binned %>%
 # # We'll convert labels into numeric midpoints to rank them
 label_midpoints <- c("0" = 0, "1-9" = 5, "10-49" = 30, "50-99" = 75, "100-249" = 175, "250+" = 300)
 
-measles_data_clean_binned$numeric_value <- label_midpoints[measles_data_clean_binned$value]
+measles_data_clean_binned$numeric_value_mid <- label_midpoints[measles_data_clean_binned$value]
 
 top_3_values_binned <- measles_data_clean_binned %>%
   arrange(desc(numeric_value)) %>%
