@@ -110,9 +110,9 @@ write.csv(measles_data, "output/measles_data_clean.csv")
 # Write XML to file - BINNED
 
 # Define necessary variables
-xml_title <- "Reported measles cases, 2025 to present"
+xml_title <- "Reported measles cases, 2026"
 print(xml_title)
-xml_subtitle <- paste0(prettyNum(total_cases_since_2025, big.mark = ","), " total confirmed cases" )
+xml_subtitle <- paste0(prettyNum(total_cases_2026, big.mark = ","), " total confirmed cases" )
 xml_source <- "CDC"
 xml_date <- paste0("As of ", formatted_datetime)
 xml_type <- "map"  # Map chart type
@@ -122,14 +122,14 @@ xml_qualifier <- " "  # One-line note, if needed
 xml_legendLabel <- "Confirmed Cases by State"  # Add this line to define the legend label
 # 
 # # Make sure data is cleaned and correctly formatted
-measles_data_binned <- measles_data %>% rename(value = total_cases)
+measles_data_binned <- measles_data %>% rename(value = cases_2026)
 # 
 # # Check the structure of WN_data_clean to verify column names and contents
 print(str(measles_data_binned))
 # 
 # # Add binned data to the dataframe
 measles_data_binned <- measles_data %>% 
-  select(state, abbreviation, total_cases)
+  select(state, abbreviation, cases_2026 )
 # 
 # # Define bins and labels
 # # Define bins and labels
@@ -144,14 +144,14 @@ xml_binsMax <- 250  # Still true
 # 
 # # Use the data as-is
 measles_data_clean_binned <- measles_data_binned %>%
-  mutate(cases_range = case_when((total_cases == 0) ~ "0",
-                                 (total_cases >= 1 & total_cases <= 9) ~ "1-9",
-                                 (total_cases >= 10 & total_cases <= 49) ~ "10-49",
-                                 (total_cases >= 50 & total_cases <= 99) ~ "50-99",
-                                 (total_cases >= 100 & total_cases <= 249) ~ "100-249",
-                                 (total_cases >= 250) ~ "250+",
+  mutate(cases_range = case_when((cases_2026 == 0) ~ "0",
+                                 (cases_2026 >= 1 & cases_2026 <= 9) ~ "1-9",
+                                 (cases_2026 >= 10 & cases_2026 <= 49) ~ "10-49",
+                                 (cases_2026 >= 50 & cases_2026 <= 99) ~ "50-99",
+                                 (cases_2026 >= 100 & cases_2026 <= 249) ~ "100-249",
+                                 (cases_2026 >= 250) ~ "250+",
                                  TRUE ~ NA)) %>% 
-  select(label = state, numeric_value = total_cases, value = cases_range)
+  select(label = state, numeric_value = cases_2026, value = cases_range)
 # 
 # # For top 3, use a custom order
 # # We'll convert labels into numeric midpoints to rank them
