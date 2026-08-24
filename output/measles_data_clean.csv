@@ -1,53 +1,53 @@
 "","state","abbreviation","total_cases","cases_2025","cases_2026"
-"1","Alabama","AL",1,1,0
-"2","Alaska","AK",4,4,0
-"3","Arizona","AZ",263,221,42
+"1","Alabama","AL",2,1,1
+"2","Alaska","AK",5,4,1
+"3","Arizona","AZ",332,222,110
 "4","Arkansas","AR",8,8,0
-"5","California","CA",44,26,18
-"6","Colorado","CO",36,35,1
-"7","Connecticut","CT",1,1,0
-"8","Delaware","DE",0,0,0
-"9","Florida","FL",115,8,107
-"10","Georgia","GA",12,10,2
+"5","California","CA",80,26,54
+"6","Colorado","CO",59,35,24
+"7","Connecticut","CT",3,1,2
+"8","Delaware","DE",22,0,22
+"9","Florida","FL",150,8,142
+"10","Georgia","GA",17,10,7
 "11","Hawaii","HI",2,2,0
-"12","Idaho","ID",16,14,2
-"13","Illinois","IL",16,14,2
-"14","Indiana","IN",10,10,0
-"15","Iowa","IA",9,9,0
-"16","Kansas","KS",91,91,0
-"17","Kentucky","KY",17,13,4
-"18","Louisiana","LA",3,3,0
+"12","Idaho","ID",17,14,3
+"13","Illinois","IL",18,14,4
+"14","Indiana","IN",12,10,2
+"15","Iowa","IA",24,9,15
+"16","Kansas","KS",92,91,1
+"17","Kentucky","KY",36,13,23
+"18","Louisiana","LA",4,3,1
 "19","Maine","ME",5,0,5
-"20","Maryland","MD",3,3,0
-"21","Massachusetts","MA",0,0,0
-"22","Michigan","MI",29,29,0
-"23","Minnesota","MN",36,26,10
+"20","Maryland","MD",21,3,18
+"21","Massachusetts","MA",2,0,2
+"22","Michigan","MI",44,29,15
+"23","Minnesota","MN",43,26,17
 "24","Mississippi","MS",0,0,0
-"25","Missouri","MO",6,6,0
-"26","Montana","MT",36,36,0
+"25","Missouri","MO",11,6,5
+"26","Montana","MT",41,36,5
 "27","Nebraska","NE",6,5,1
 "28","Nevada","NV",2,2,0
 "29","New Hampshire","NH",0,0,0
-"30","New Jersey","NJ",11,11,0
-"31","New Mexico","NM",101,100,1
-"32","New York","NY",27,26,1
-"33","North Carolina","NC",20,2,18
-"34","North Dakota","ND",56,36,20
-"35","Ohio","OH",49,40,9
+"30","New Jersey","NJ",13,12,1
+"31","New Mexico","NM",118,100,18
+"32","New York","NY",47,26,21
+"33","North Carolina","NC",24,2,22
+"34","North Dakota","ND",74,36,38
+"35","Ohio","OH",120,40,80
 "36","Oklahoma","OK",18,17,1
-"37","Oregon","OR",6,1,5
-"38","Pennsylvania","PA",28,16,12
-"39","Rhode Island","RI",1,1,0
-"40","South Carolina","SC",982,329,653
-"41","South Dakota","SD",23,16,7
-"42","Tennessee","TN",8,8,0
-"43","Texas","TX",824,803,21
-"44","Utah","UT",337,188,149
+"37","Oregon","OR",49,1,48
+"38","Pennsylvania","PA",387,16,371
+"39","Rhode Island","RI",2,1,1
+"40","South Carolina","SC",1003,333,670
+"41","South Dakota","SD",27,16,11
+"42","Tennessee","TN",11,8,3
+"43","Texas","TX",993,803,190
+"44","Utah","UT",715,189,526
 "45","Vermont","VT",3,2,1
-"46","Virginia","VA",15,6,9
-"47","Washington","WA",37,11,26
-"48","West Virginia","WV",0,0,0
-"49","Wisconsin","WI",38,36,2
-"50","Wyoming","WY",15,15,0
-"51","District of Columbia",NA,0,0,0
-"52","New York City",NA,16,15,1
+"46","Virginia","VA",182,6,176
+"47","Washington","WA",66,11,55
+"48","West Virginia","WV",2,0,2
+"49","Wisconsin","WI",74,36,38
+"50","Wyoming","WY",17,15,2
+"51","District of Columbia",NA,1,0,1
+"52","New York City",NA,20,15,5

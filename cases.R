@@ -15,7 +15,7 @@ tryCatch({
 }, error = function(e) {
   # Do nothing
 })
-dw_api_key <- Sys.getenv("DW_API_KEY")
+dw_api_key <- Sys.getenv("DW_KEY")
 
 # Load data
 cases_by_year <- read_csv("data/cases.csv") %>% 
@@ -33,7 +33,7 @@ measles_by_year <- fromJSON("https://www.cdc.gov/wcms/vizdata/measles/MeaslesCas
 
 # Append new data and handle duplicate years (keep latest value)
 cases_by_year <- cases_by_year %>%
-  filter(year != "2024") %>%  # Remove outdated 2024 row
+  filter(year != "2024" | year != "2025" | year != "2025") %>%  # Remove outdated 2024 row
   bind_rows(measles_by_year) %>%  # Append new data
   arrange(year)  # Ensure chronological order
 
@@ -50,7 +50,7 @@ current_datetime_eastern <- with_tz(current_datetime_utc, "America/New_York")
 rounded_datetime <- round_date(current_datetime_eastern, "hour")
 
 # Format the date and time
-formatted_datetime <- format(rounded_datetime, "%B %e, %Y at %l %p ET.")
+formatted_datetime <- format(rounded_datetime, "%B %e, %Y")
 
 # Update the chart
 measles_by_year <- fromJSON("https://www.cdc.gov/wcms/vizdata/measles/MeaslesCasesYear.json") %>% filter(filter == "2000-Present*") %>% select(year, cases)%>% 
@@ -58,6 +58,8 @@ measles_by_year <- fromJSON("https://www.cdc.gov/wcms/vizdata/measles/MeaslesCas
   janitor::clean_names()
 
 dw_data_to_chart(cases_by_year, "svjga", api_key = dw_api_key)
+
+dw_publish_chart("svjga", api_key = dw_api_key)
 
 dw_edit_chart(
   chart_id = "svjga",
@@ -87,5 +89,7 @@ dw_edit_chart(
   source_url = "https://www.cdc.gov/measles/data-research/index.html",
   folderId = "376016"
 )
+
+dw_publish_chart("kEJYS", api_key = dw_api_key)
 
 

@@ -1,4 +1,3 @@
-## cases not high enough yet to use
 
 
 # Libraries
@@ -15,20 +14,15 @@ tryCatch({
 }, error = function(e) {
   # Do nothing
 })
-dw_api_key <- Sys.getenv("DW_API_KEY")
+dw_api_key <- Sys.getenv("DW_KEY")
 
 
 # Read JSON data for total cases by year to get 2025 total cases
-MeaslesCasesHospWeekly2025 <- fromJSON("https://www.cdc.gov/wcms/vizdata/measles/MeaslesCasesHospWeekly2025.json")
-total_cases <- as.numeric(MeaslesCasesHospWeekly2025$Total_Cases)
-unvax <- MeaslesCasesHospWeekly2025$Unvaccinated_or_Unknown
-one_mmr <- MeaslesCasesHospWeekly2025$One_MMR_Dose
-two_mmr <- MeaslesCasesHospWeekly2025$Two_MMR_Doses
-
-# Remove the '%' symbol and convert to numeric (this removes everything except the numeric part)
-unvax <- as.numeric(str_extract(unvax, "\\d+"))
-one_mmr <- as.numeric(str_extract(one_mmr, "\\d+"))
-two_mmr <- as.numeric(str_extract(two_mmr, "\\d+"))
+MeaslesCasesHosp <- fromJSON("https://www.cdc.gov/wcms/vizdata/measles/measles_hosp.json")
+total_cases <- as.numeric(str_replace(MeaslesCasesHosp$`2026`$total_cases, ",", ""))
+unvax <- as.numeric(str_replace(MeaslesCasesHosp$`2026`$case_unvax_unknown, "%", ""))
+one_mmr <- as.numeric(str_replace(MeaslesCasesHosp$`2026`$case_one_mmr, "%", ""))
+two_mmr <- as.numeric(str_replace(MeaslesCasesHosp$`2026`$case_two_mmr, "%", ""))
 
 # # URL of the webpage (replace with the actual URL)
 # url <- "https://www.cdc.gov/measles/data-research/index.html"  # Example, update with the actual URL
@@ -89,7 +83,7 @@ current_datetime_eastern <- with_tz(current_datetime_utc, "America/New_York")
 rounded_datetime <- round_date(current_datetime_eastern, "hour")
 
 # Format the date and time
-formatted_datetime <- format(rounded_datetime, "%B %e, %Y at %l %p EDT.")
+formatted_datetime <- format(rounded_datetime, "%B %e, %Y")
 
 dw_data_to_chart(vax_df, "qOFbx", api_key = dw_api_key)
 
@@ -111,7 +105,6 @@ dw_edit_chart(
     "Last updated", formatted_datetime,
     "<br>Note: Numbers may not add to 100% due to rounding."
   ),
-  byline = "Taylor Johnston / CBS News",
   source_name = "CDC",
   source_url = "https://www.cdc.gov/measles/data-research/index.html",
   folderId = "299930"
